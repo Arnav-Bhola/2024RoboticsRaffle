@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "2024roboticsraffle": "file:",
     "scss": "^0.2.4"
   },
   "devDependencies": {
