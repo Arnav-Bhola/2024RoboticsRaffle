@@ -11,14 +11,17 @@
 
 @layer base {
   .font-outline-2 {
-    -webkit-text-stroke: 2.5px #e6af0b;
+    -webkit-text-stroke: 2.5px #ffd000;
   }
   .font-outline-4 {
-    -webkit-text-stroke: 4px #e6af0b;
+    -webkit-text-stroke: 4px #ffd000;
+  }
+  .text-shadow {
+    text-shadow: 3px 3px 3px #ffd000, 3px 4px 5px black;
   }
 }
 
-/* This is the code that gives the links their background images. */
+/* Gives links their background images. */
 #facebook-link {
   background-image: url("./assets/images/facebook.png");
 }
@@ -33,4 +36,35 @@
 }
 #github-link {
   background-image: url("./assets/images/github.png");
+}
+
+/* Adds the gradient to the progress bar */
+.progress {
+  background: #1a245b;
+  background: linear-gradient(
+    90deg,
+    rgba(76, 92, 179, 1) 0%,
+    rgba(78, 94, 185, 1) 50%,
+    rgba(26, 36, 91, 1) 100%
+  );
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+      135deg,
+      /* Creates a slant */ transparent 0,
+      transparent 10px,
+      #1d2863 10px,
+      #1d2863 20px
+    );
+    opacity: 0.5; /* Slight transparency */
+    pointer-events: none; /* Keeps it from blocking interactions */
+    z-index: 1;
+  }
 }
