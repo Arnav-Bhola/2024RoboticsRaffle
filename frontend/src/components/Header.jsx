@@ -1,4 +1,26 @@
+import { useEffect, useState } from "react";
+import axios from 'axios';
+
 const Header = () => {
+const [ticketsSold, setTicketsSold] = useState("") 
+useEffect(() => {
+  const sendRequest = async () => {
+    axios.get('https://docs.google.com/spreadsheets/d/e/2PACX-1vTskbKwNeDFdZz_O3qhwTAfpvTdGIxb571uQ5wleV6H4BGY4h7tD-IEjhn-1fRC2XCHqGxRGOzb_x8j/pub?gid=0&single=true&output=csv')
+    .then(response => {
+      try {
+      setTicketsSold(response.data.split("\n")[1].split(",")[2])}
+      catch (e) {
+        setTicketsSold(0)
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+  }
+
+  sendRequest()
+}, []) 
+
   return (
     <div className='flex items-center justify-center h-[91.5vh] flex-col mr-[15rem] ml-[15rem] overflow-hidden'>
       <h1 className='font-stencil text-9xl font-outline-2 text-blue-500 tracking-tight text-shadow'>
