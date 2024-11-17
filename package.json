@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "2024roboticsraffle": "file:",
+    "axios": "^1.7.7",
     "scss": "^0.2.4"
   },
   "devDependencies": {

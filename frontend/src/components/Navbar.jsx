@@ -2,7 +2,7 @@ import logo from "../assets/images/logo.svg";
 
 const Navbar = () => {
   return (
-    <div className='flex xl:justify-evenly md:justify-between justify-center gap-16 items-center pb-[0.75rem] pt-[0.75rem] xl:pr-[13rem] pr-[8rem] xl:pl-[13rem] pl-[8rem] h-[8.5vh] bg-blue-500 relative shadow-2xl'>
+    <div className='flex xl:justify-evenly select-none md:justify-between justify-center gap-16 items-center pb-[0.75rem] pt-[0.75rem] xl:pr-[13rem] pr-[8rem] xl:pl-[13rem] pl-[8rem] h-[8.5vh] bg-blue-500 relative shadow-2xl'>
       <div className='min-w-[20%] h-full flex justify-start  text-start justify-self-start brightness-100 hover:brightness-150 cursor-pointer'>
         <a
           className='h-full w-fit justify-self-start'
